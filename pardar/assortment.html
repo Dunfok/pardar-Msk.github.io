@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ассортимент — ParDar-msk</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Стили -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/assortment.css" />
+  <link rel="stylesheet" href="js/main.js">
+  
+</head>
+<body>
+  
+
+  <!-- Навигация (как на главной) -->
+  <nav class="main-nav" data-aos="fade-down">
+    <div class="logo-container">
+      <img src="images/logo-bg.png" alt="Par Dar Shop" class="logo-img">
+      <h1>ParDar-msk</h1>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    easing: 'ease-in-out',
+    once: true,
+    offset: 100
+  });
+
+ 
+  document.addEventListener('DOMContentLoaded', function() {
+    const ageVerification = document.getElementById('age-verification');
+    const ageYes = document.getElementById('age-yes');
+    const ageNo = document.getElementById('age-no');
+
+    if (ageVerification) {
+      ageVerification.style.display = 'flex';
+    }
+
+    if (ageYes) {
+      ageYes.addEventListener('click', function() {
+        if (ageVerification) {
+          ageVerification.style.display = 'none';
+        }
+      });
+    }
+
+    if (ageNo) {
+      ageNo.addEventListener('click', function() {
+        window.location.href = 'https://ya.ru';
+      });
+    }
+  });
+</script>
+  </nav>
+
+  <!-- Блок с названием и фоном-мечтой -->
+  <header class="hero" data-aos="fade-up">
+    <h1>Добро пожаловать в ParDar-msk</h1>
+    <p>Качественная электронная продукция с доставкой по всей России</p>
+  </header>
+
+  <!-- Основное содержимое -->
+  <div class="content">
+    <!-- Категории -->
+   <!-- Заголовок "Выберите категорию" -->
+<div class="category-header">
+  <h1>Выберите категорию</h1>
+</div>
+    <div class="categories">
+      <!-- Устройства -->
+      <a href="devices.html" class="cat-link">
+        <div class="cat-box" data-aos="fade-up" data-aos-delay="100">
+          <img src="images/devices.jpg" alt="Устройства" class="cat-img">
+          <span class="cat-text">Устройства</span>
+          
+        </div>
+      </a>
+
+      <!-- Жидкости -->
+      <a href="liquids.html" class="cat-link">
+        <div class="cat-box" data-aos="fade-up" data-aos-delay="200">
+          <img src="images/liquids.jpg" alt="Жидкости" class="cat-img">
+          <span class="cat-text">Жидкости</span>
+    
+        </div>
+      </a>
+
+      <!-- Снюс -->
+      <a href="accessories.html" class="cat-link">
+        <div class="cat-box" data-aos="fade-up" data-aos-delay="300">
+          <img src="images/snus.jpg" alt="Снюс" class="cat-img">
+          <span class="cat-text">Расходники+табак</span>
+       
+        </div>
+      </a>
+    </div>
+
+    <!-- Галерея товаров -->
+    <section class="gallery">
+      <h2 class=".section-header">Популярные товары</h2>
+      <div class="product-grid">
+        <div class="product-card" data-aos="fade-up">
+          <img src="https://via.placeholder.com/300x200?text=Устройство+1" alt="Устройство">
+          <h3>Один Vape Pro</h3>
+          <p>Мощное устройство, 40W, 2500mAh</p>
+          <strong>1990 руб.</strong>
+        </div>
+        <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+          <img src="https://via.placeholder.com/300x200?text=Жидкость+1" alt="Жидкость">
+          <h3>Табак Ментол</h3>
+          <p>10 мл, 3 мг никотина</p>
+          <strong>390 руб.</strong>
+        </div>
+        <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+          <img src="https://via.placeholder.com/300x200?text=Снюс+1" alt="Снюс">
+          <h3>Oden's Lakrits</h3>
+          <p>Шведский снус, натуральный вкус</p>
+          <strong>590 руб.</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- Кнопка "Вернуться на главную" -->
+  <section class="back-to-home">
+    <a href="index.html" class="btn-back-home">← Вернуться на главную</a>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+      offset: 100
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const ageVerification = document.getElementById('age-verification');
+      const ageYes = document.getElementById('age-yes');
+      const ageNo = document.getElementById('age-no');
+
+      ageVerification.style.display = 'flex';
+
+      ageYes.addEventListener('click', function() {
+        ageVerification.style.display = 'none';
+      });
+
+      ageNo.addEventListener('click', function() {
+        window.location.href = 'https://ya.ru';
+      });
+    });
+  </script>
+</body>
+</html>

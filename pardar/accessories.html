@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Аксессуары для электронных сигарет ParDar-msk.">
+  <title>Аксессуары - ParDar-msk</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <div id="cart-overlay" class="cart-overlay">
+    <div class="cart-container">
+      <div class="cart-header">
+        <h2>Корзина</h2>
+        <button id="close-cart" class="close-cart-btn">×</button>
+      </div>
+      <div class="cart-items" id="cart-items">
+ 
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <strong>Итого: <span id="cart-total">0</span> ₽</strong>
+        </div>
+        <button id="checkout-btn" class="checkout-btn">Перейти к оплате</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="cart-icon" class="cart-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="9" cy="21" r="1"></circle>
+      <circle cx="20" cy="21" r="1"></circle>
+      <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+    </svg>
+    <span id="cart-count" class="cart-count">0</span>
+  </div>
+
+  <div id="age-verification" class="age-verification-overlay">
+    <div class="age-verification-content">
+      <div class="age-warning-icon">⚠️</div>
+      <h2>Вам уже исполнилось 18 лет?</h2>
+      <p>Для просмотра этой категории товаров необходимо подтвердить возраст</p>
+      <div class="age-buttons">
+        <button id="age-yes" class="age-btn yes-btn">Да, мне 18+</button>
+        <button id="age-no" class="age-btn no-btn">Нет, мне меньше 18</button>
+      </div>
+    </div>
+  </div>
+
+  <nav aria-label="Основная навигация">
+    <div class="logo-container">
+      <img src="images/logo-bg.png" alt="Логотип ParDar-msk" class="logo-img">
+      <h1>ParDar-msk</h1>
+    </div>
+    <ul>
+      <li><a href="assortment.html">Ассортимент</a></li>
+      <li><a href="index.html#reviews">Отзывы</a></li>
+      <li><a href="index.html#address">Адрес</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <h1>Аксессуары</h1>
+    <p>Все необходимые аксессуары для обслуживания и использования устройств</p>
+  </header>
+
+  <section class="products-section">
+    <div class="products-container">
+      <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="product-image">
+          <img src="images/accessory1.jpg" alt="Зарядное устройство">
+        </div>
+        <div class="product-content">
+          <h3>Зарядное устройство USB-C</h3>
+          <p>Быстрое зарядное устройство с кабелем USB-C, 18W</p>
+          <div class="product-price">590 ₽</div>
+         <button class="product-btn" onclick="addToCart('Зарядное устройство USB-C', 590, 'images/accessory1.jpg')">В корзину</button>
+        </div>
+      </div>
+
+      <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="product-image">
+          <img src="images/accessory2.jpg" alt="СНУС ЕБАТЬ">
+        </div>
+        <div class="product-content">
+          <h3>Чистящие салфетки</h3>
+          <p>мне курьер привез не те кардриджи что за наеб</p>
+          <div class="product-price">159 ₽</div>
+          <button class="product-btn" onclick="addToCart('Чистящие салфетки', 159, 'images/accessory2.jpg')">В корзину</button>
+        </div>
+      </div>
+
+      <div class="product-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="product-image">
+          <img src="images/accessory3.jpg" alt="Сменные катриджи">
+        </div>
+        <div class="product-content">
+          <h3>Сменные катриджи JUUL</h3>
+          <p>Комплект из 4 сменных катриджей различных вкусов</p>
+          <div class="product-price">890 ₽</div>
+          <button class="product-btn" onclick="addToCart('Сменные катриджи JUUL', 890, 'images/accessory3.jpg')">В корзину</button>
+        </div>
+      </div>
+
+      <div class="product-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="product-image">
+          <img src="images/accessory4.jpg" alt="Переносная батарея">
+        </div>
+        <div class="product-content">
+          <h3>Переносная батарея 10000mAh</h3>
+          <p>Внешний аккумулятор для зарядки устройств в дороге</p>
+          <div class="product-price">1 290 ₽</div>
+          <button class="product-btn" onclick="addToCart('Переносная батарея 10000mAh', 1290, 'images/accessory4.jpg')">В корзину</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+      offset: 100
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const ageVerification = document.getElementById('age-verification');
+      const ageYes = document.getElementById('age-yes');
+      const ageNo = document.getElementById('age-no');
+
+      ageVerification.style.display = 'flex';
+
+      ageYes.addEventListener('click', function() {
+        ageVerification.style.display = 'none';
+      });
+
+      ageNo.addEventListener('click', function() {
+        window.location.href = 'https://ya.ru';
+      });
+    });
+
+    let cart = [];
+
+    function loadCart() {
+      const savedCart = localStorage.getItem('cart');
+      if (savedCart) {
+        cart = JSON.parse(savedCart);
+        updateCartDisplay();
+      }
+    }
+
+    function saveCart() {
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    function addToCart(name, price, image) {
+      const existingItem = cart.find(item => item.name === name);
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({
+          name: name,
+          price: price,
+          image: image,
+          quantity: 1
+        });
+      }
+      saveCart();
+      updateCartDisplay();
+      showCartNotification();
+    }
+
+    function updateCartDisplay() {
+      const cartCount = document.getElementById('cart-count');
+      const cartItems = document.getElementById('cart-items');
+      const cartTotal = document.getElementById('cart-total');
+      
+      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+      cartCount.textContent = totalItems;
+      
+      if (cartItems) {
+        if (cart.length === 0) {
+          cartItems.innerHTML = '<p class="empty-cart">Корзина пуста</p>';
+        } else {
+          cartItems.innerHTML = cart.map(item => `
+            <div class="cart-item">
+              <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+              <div class="cart-item-details">
+                <h4>${item.name}</h4>
+                <p>${item.price} ₽</p>
+                <div class="quantity-controls">
+                  <button onclick="changeQuantity('${item.name}', -1)" class="qty-btn">-</button>
+                  <span>${item.quantity}</span>
+                  <button onclick="changeQuantity('${item.name}', 1)" class="qty-btn">+</button>
+                </div>
+              </div>
+              <button onclick="removeFromCart('${item.name}')" class="remove-item">×</button>
+            </div>
+          `).join('');
+        }
+        
+        const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        if (cartTotal) {
+          cartTotal.textContent = total;
+        }
+      }
+    }
+
+    function changeQuantity(name, change) {
+      const item = cart.find(item => item.name === name);
+      if (item) {
+        item.quantity += change;
+        if (item.quantity <= 0) {
+          removeFromCart(name);
+        } else {
+          saveCart();
+          updateCartDisplay();
+        }
+      }
+    }
+
+    function removeFromCart(name) {
+      cart = cart.filter(item => item.name !== name);
+      saveCart();
+      updateCartDisplay();
+    }
+
+    function showCartNotification() {
+      const notification = document.createElement('div');
+      notification.className = 'cart-notification';
+      notification.textContent = 'Товар добавлен в корзину!';
+      document.body.appendChild(notification);
+      
+      setTimeout(() => {
+        notification.remove();
+      }, 2000);
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      loadCart();
+      
+      const cartIcon = document.getElementById('cart-icon');
+      const cartOverlay = document.getElementById('cart-overlay');
+      const closeCart = document.getElementById('close-cart');
+      const checkoutBtn = document.getElementById('checkout-btn');
+      
+      if (cartIcon) {
+        cartIcon.addEventListener('click', function() {
+          if (cartOverlay) {
+            cartOverlay.style.display = 'flex';
+          }
+        });
+      }
+      
+      if (closeCart) {
+        closeCart.addEventListener('click', function() {
+          if (cartOverlay) {
+            cartOverlay.style.display = 'none';
+          }
+        });
+      }
+      
+    if (checkoutBtn) {
+  checkoutBtn.addEventListener('click', function() {
+    // Проверяем наличие товаров в корзине
+    if (cart.length > 0) {
+      window.location.href = 'checkout.html';
+    } else {
+      // Показываем уведомление, если корзина пуста
+      const notification = document.createElement('div');
+      notification.className = 'cart-notification';
+      notification.textContent = 'Корзина пуста! Добавьте товары для оформления заказа.';
+      notification.style.backgroundColor = '#ff4757';
+      document.body.appendChild(notification);
+      
+      setTimeout(() => {
+        notification.remove();
+      }, 3000);
+    }
+  });
+}
+      
+      if (cartOverlay) {
+        cartOverlay.addEventListener('click', function(e) {
+          if (e.target === cartOverlay) {
+            cartOverlay.style.display = 'none';
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

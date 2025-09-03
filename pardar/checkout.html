@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Оплата заказа ParDar-msk">
+  <title>Оплата - ParDar-msk</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Стили -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+  <!-- Навигация -->
+  <nav aria-label="Основная навигация">
+    <div class="logo-container">
+      <img src="images/logo-bg.png" alt="Логотип ParDar-msk" class="logo-img">
+      <h1>ParDar-msk</h1>
+    </div>
+    <ul>
+      <li><a href="assortment.html">Ассортимент</a></li>
+      <li><a href="index.html#reviews">Отзывы</a></li>
+      <li><a href="index.html#address">Адрес</a></li>
+    </ul>
+  </nav>
+
+  <!-- Блок с названием -->
+  <header class="hero">
+    <h1>Оформление заказа</h1>
+    <p>Проверьте ваш заказ и выберите способ оплаты</p>
+  </header>
+
+  <!-- Оформление заказа -->
+  <section class="checkout-section">
+    <div class="checkout-container">
+      <div class="order-summary">
+        <h2>Ваш заказ</h2>
+        <div id="order-items" class="order-items">
+          <!-- Товары будут загружены сюда -->
+        </div>
+        <div class="order-total">
+          <strong>Итого к оплате: <span id="order-total">0</span> ₽</strong>
+        </div>
+      </div>
+      
+      <div class="payment-methods">
+        <h2>Способы оплаты</h2>
+        <div class="payment-options">
+          <div class="payment-option" onclick="selectPayment('card')">
+            <input type="radio" name="payment" id="card" value="card">
+            <label for="card">
+              <div class="payment-icon">💳</div>
+              <div>
+                <h3>Банковская карта</h3>
+                <p>Оплата через безопасный платежный шлюз</p>
+              </div>
+            </label>
+          </div>
+          
+          <div class="payment-option" onclick="selectPayment('sbp')">
+            <input type="radio" name="payment" id="sbp" value="sbp">
+            <label for="sbp">
+              <div class="payment-icon">📱</div>
+              <div>
+                <h3>СБП (Система быстрых платежей)</h3>
+                <p>Оплата через мобильное приложение банка</p>
+              </div>
+            </label>
+          </div>
+          
+          <div class="payment-option" onclick="selectPayment('qiwi')">
+            <input type="radio" name="payment" id="qiwi" value="qiwi">
+            <label for="qiwi">
+              <div class="payment-icon">🥝</div>
+              <div>
+                <h3>QIWI Кошелек</h3>
+                <p>Оплата через QIWI кошелек</p>
+              </div>
+            </label>
+          </div>
+        </div>
+        
+        <button id="pay-btn" class="pay-btn" onclick="processPayment()">Оплатить заказ</button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Загрузка заказа из корзины
+    function loadOrder() {
+      const savedCart = localStorage.getItem('cart');
+      const orderItems = document.getElementById('order-items');
+      const orderTotal = document.getElementById('order-total');
+      
+      if (savedCart && orderItems && orderTotal) {
+        const cart = JSON.parse(savedCart);
+        if (cart.length === 0) {
+          orderItems.innerHTML = '<p class="empty-cart">Корзина пуста</p>';
+          return;
+        }
+        
+        orderItems.innerHTML = cart.map(item => `
+          <div class="order-item">
+            <img src="${item.image}" alt="${item.name}" class="order-item-image">
+            <div class="order-item-details">
+              <h4>${item.name}</h4>
+              <p>${item.quantity} × ${item.price} ₽</p>
+            </div>
+            <div class="order-item-total">${item.quantity * item.price} ₽</div>
+          </div>
+        `).join('');
+        
+        const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        orderTotal.textContent = total;
+      }
+    }
+    
+    // Выбор способа оплаты
+    function selectPayment(method) {
+      document.querySelectorAll('input[name="payment"]').forEach(radio => {
+        radio.checked = false;
+      });
+      document.getElementById(method).checked = true;
+    }
+    
+    // Обработка оплаты
+    function processPayment() {
+      const selectedPayment = document.querySelector('input[name="payment"]:checked');
+      if (!selectedPayment) {
+        alert('Пожалуйста, выберите способ оплаты');
+        return;
+      }
+      
+      const total = document.getElementById('order-total').textContent;
+      
+      // Имитация оплаты (в реальном приложении здесь будет интеграция с платежной системой)
+      alert(`Заказ на сумму ${total} ₽ будет оплачен через ${selectedPayment.value}. Спасибо за покупку!`);
+      
+      // Очищаем корзину после оплаты
+      localStorage.removeItem('cart');
+      
+      // Переход на страницу подтверждения
+      window.location.href = 'success.html';
+    }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      loadOrder();
+    });
+  </script>
+</body>
+</html>

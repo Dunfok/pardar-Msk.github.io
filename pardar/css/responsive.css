@@ -1,0 +1,68 @@
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 5%;
+  }
+
+  .logo-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .logo-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  nav h1 {
+    font-size: 1.5rem;
+  }
+
+  nav ul {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .address {
+    padding: 2rem;
+    margin: 2rem auto;
+  }
+
+  .address h2 {
+    font-size: 1.6rem;
+  }
+
+  .reviews {
+    padding: 2rem 5%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .review-card {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .cta {
+    padding: 3rem 1rem;
+  }
+
+  .btn {
+    font-size: 1.1rem;
+    padding: 1rem 2.2rem;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
